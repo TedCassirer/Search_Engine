@@ -1,0 +1,14 @@
+Marking first 5 documents as relevant
+
+
+Query: Sleeping on campus
+
+No speedup:
+1: 8.61s, 324 words in the query
+2. 8.80s, 481 words in the query
+3. 8.80s, 481 words in the query 
+
+0.1 speedup:
+1: 0.52s, 33 words in the query
+2. 0.12s, 32 words in the query
+3. 0.09s, 32 words in the query 

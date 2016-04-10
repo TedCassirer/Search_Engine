@@ -1,0 +1,2 @@
+Record and evalutate the first result and plot a precision-recall graph for the 10 highest ranked results. Any documents you evaluated as relevant should be marked as such. 
+Now perform a new search with the feedback and redo the evaulation on the first 10 results. Repeat until the results has converged and no new relevant documents gets added to the top 10 list.

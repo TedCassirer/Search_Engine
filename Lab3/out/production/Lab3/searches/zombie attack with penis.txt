@@ -1,0 +1,16 @@
+ Kearney_Hall   0.05529
+ Measure_Z   0.03686
+ Disasters   0.02538
+ Spirit_Halloween   0.02538
+ Biological_Disasters   0.01985
+ Scream   0.01711
+ Zombie_Walk   0.00974
+ Lame_pages   0.00819
+ Zombie_Attack_Response_Guide   0.00688
+ Explore   0.00675
+ EvanGray   0.00497
+ Brian.Tangney   0.00215
+ AllegreApartments   0.00170
+ BrentLaabs   0.00079
+ Boycott%2C_Divestment%2C_And_Sanctions_against_Israel   0.00028
+ Banning_leaf-blowers   0.00020
