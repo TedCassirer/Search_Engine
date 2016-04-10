@@ -13,29 +13,35 @@ package ir;
 
 import javafx.geometry.Pos;
 
+import java.io.Serializable;
 import java.util.*;
 
 
 /**
  *   Implements an inverted index as a Hashtable from words to PostingsLists.
  */
-public class HashedIndex implements Index {
+public class HashedIndex implements Index, Serializable{
 
     /** The index as a hashtable. */
     private HashMap<String,PostingsList> index = new HashMap<String,PostingsList>();
 
+    public HashMap<String, String> docIDs = new HashMap<String,String>();
 
     /**
      *  Inserts this token in the index.
      */
     public void insert( String token, int docID, int offset ) {
-	//
-	//  YOUR CODE HERE
-	//
         if (!index.containsKey(token)) {
             index.put(token, new PostingsList());
         }
         index.get(token).add(docID, offset);
+    }
+
+    public void insert(String token, PostingsEntry pEntry) {
+        if (!index.containsKey(token)) {
+            index.put(token, new PostingsList());
+        }
+        index.get(token).add(pEntry);
     }
 
 
@@ -47,10 +53,16 @@ public class HashedIndex implements Index {
 	//
 	//  REPLACE THE STATEMENT BELOW WITH YOUR CODE
 	//
+
         return index.keySet().iterator();
 
     }
-
+    public static
+    <T extends Comparable<? super T>> List<T> asSortedList(Collection<T> c) {
+        List<T> list = new ArrayList<T>(c);
+        java.util.Collections.sort(list);
+        return list;
+    }
 
     /**
      *  Returns the postings for a specific term, or null
@@ -145,6 +157,7 @@ public class HashedIndex implements Index {
         return list;
     }
 
+
     public PostingsList phrase_search(Query query){
         int nb_of_terms = query.terms.size();
         if ( nb_of_terms == 0 ) {
@@ -188,8 +201,6 @@ public class HashedIndex implements Index {
             merge = tmp;
         }
         return merge;
-
-
     }
 
 

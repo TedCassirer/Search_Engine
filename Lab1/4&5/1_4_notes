@@ -1,0 +1,16 @@
+Fiber and Polymer Science. Score: 1
+Contains a direct link to the math page. But the page itself contains no info about the query.'
+
+Evelyn_Silvia. Score: 1
+Professor in math. But page itself does not contain any info about the program other than a link.
+
+Statistics Score: 2
+While not exactly what we're looking for it's information about a major in mathematics and nearly every class is math related. But no direct links to the math page exists.
+
+
+#items retrieved = 23
+#relevant items retrieved = 10
+#relevant items = 100
+
+Precision = (#relevant items retrieved) / (#retrieved items) = 10/23 = 0.43
+Recall = (#relevant items retrieved) / (#relevant items) = 10/100 = 0.1

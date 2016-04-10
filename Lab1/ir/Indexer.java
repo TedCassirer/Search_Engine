@@ -70,6 +70,7 @@ public class Indexer {
      */
     public void processFiles( File f ) {
 	// do not try to index fs that cannot be read
+		//System.out.println("Files: " + f.getName());
 	if ( f.canRead() ) {
 	    if ( f.isDirectory() ) {
 		String[] fs = f.list();
@@ -78,6 +79,7 @@ public class Indexer {
 		    for ( int i=0; i<fs.length; i++ ) {
 			processFiles( new File( f, fs[i] ));
 		    }
+
 		}
 	    } else {
 		//System.err.println( "Indexing " + f.getPath() );
@@ -100,6 +102,7 @@ public class Indexer {
 			    // Perhaps it wasn't a PDF file after all
 			    reader = new FileReader( f );
 			}
+
 		    }
 		    else {
 			// We hope this is ordinary text

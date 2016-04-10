@@ -12,7 +12,7 @@ package ir;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public interface Index {
+public interface Index{
 
     /* Index types */
     public static final int HASHED_INDEX = 0;

@@ -10,10 +10,13 @@
 
 package ir;
 
+import com.google.common.hash.HashCode;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 import java.awt.*;
@@ -27,6 +30,8 @@ import javax.swing.event.*;
  */
 //java -Xmx1024m -cp .:~/Desktop/Skola/DD2476/Lab1 ir.SearchGUI -d ~/Desktop/Skola/DD2476/Lab1/davisWiki/
 	//java -Xmx1024m -cp .:~/Desktop/Lab1 ir.SearchGUI -d ~/Desktop/Lab1/davisWiki
+// ~/Desktop/Skolan/Lab1/out/production/Lab1 $ java -Xmx24m -cp .: ir.SearchGUI -d ~/Desktop/Skolan/davisWiki
+
 
 public class SearchGUI extends JFrame {
 
@@ -58,7 +63,7 @@ public class SearchGUI extends JFrame {
     Object indexLock = new Object();
 
     /**  Directory from which the code is compiled and run. */
-    public static final String homeDir = "/home/ted-cassirer/Desktop/Skola/DD2476/Lab1/ir";
+    public static final String homeDir = "~/Desktop/Skolan/DD2476/Lab1/ir";
 
 
     /*
@@ -73,7 +78,7 @@ public class SearchGUI extends JFrame {
      *   Common GUI resources
      */
     public JTextField queryWindow = new JTextField( "", 28 );
-    public JTextArea resultWindow = new JTextArea( "", 23, 28 );
+    public JTextArea resultWindow = new JTextArea( "", 23, 35 );
     private JScrollPane resultPane = new JScrollPane( resultWindow );
     private Font queryFont = new Font( "Arial", Font.BOLD, 24 );
     private Font resultFont = new Font( "Arial", Font.BOLD, 16 );
@@ -347,13 +352,16 @@ public class SearchGUI extends JFrame {
     private void index() {
 	synchronized ( indexLock ) {
 	    resultWindow.setText( "\n  Indexing, please wait..." );
+
+		System.out.println(dirNames.size());
 	    for ( int i=0; i<dirNames.size(); i++ ) {
-		File dokDir = new File( dirNames.get( i ));
-		indexer.processFiles( dokDir );
+			File dokDir = new File( dirNames.get( i ));
+			indexer.processFiles( dokDir );
 	    }
+	}
 	    resultWindow.setText( "\n  Done!" );
 	}
-    };
+    ;;
 
 
     /* ----------------------------------------------- */
@@ -383,10 +391,14 @@ public class SearchGUI extends JFrame {
 
 
     public static void main( String[] args ) {
+
+
 	SearchGUI s = new SearchGUI();
 	s.createGUI();
 	s.decodeArgs( args );
 	s.index();
+
+
     }
 
 }

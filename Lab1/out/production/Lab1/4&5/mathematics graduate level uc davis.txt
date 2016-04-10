@@ -1,0 +1,17 @@
+1 Graduate_Groups 2
+1 Private_Tutoring 0
+1 Computer_Science 0
+1 Candidate_Statements 0
+1 Economics 0
+1 ECE_Course_Reviews 1
+1 Statistics 2
+1 UCD_Honors_and_Prizes 0
+1 What_I_Wish_I_Knew...Before_Coming_to_UC_Davis_Entomology 2
+1 Mathematics 3
+
+precision = 5/10 = 0.5
+recall = 5/100 = 0.05
+
+better precision, worse recall.
+
+To increase precision, add terms such as Math, education, programme etc. For better recall use fewer and more general terms. Such as: Math graduate. Or just math mathematics
